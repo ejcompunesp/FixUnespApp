@@ -1,0 +1,106 @@
+let t ={
+	a: 1,
+	b: 2,
+	c: 3,
+	d: 4,
+};
+
+let x = {
+	a: 1,
+	b: 2,
+	c: 3,
+	d: 4,
+	e: 1,	
+}
+
+//ou
+
+let x = {
+	...t,
+	e: 1
+}
+
+let props = {
+	name: 'Afonso'
+	nme: 'Afonso'
+	nme: 'Afonso'
+}
+
+<Component
+	{...this.props}
+	/>
+
+<Component
+	name='Afonso'
+	/>
+
+
+	import React, { Component } from 'react';
+
+import { 
+	View, 
+	StyleSheet, 
+	Text ,
+	TextInput,
+	Dimensions,
+} from 'react-native';
+
+export default class InputContainer extends Component{
+
+	render (){
+
+		const ={
+			underlineColorAndroid,
+			...rest
+		} = this.props;
+		return(
+			<View style={styles.inputContainer}>
+						<Text style={styles.boxTitle}>{this.props.label}</Text>
+						<TextInput
+						{...rest}
+							style={styles.boxInput}
+							underlineColorAndroid="rgba(70,70,70,0)"
+							placeholder={this.props.placeholder}
+							value={this.props._value}
+							onChangeText={text => this.props._onChangeText(text)}
+							multiline={this.props._multiline}
+							numberOfLines={this.props._lines}
+						/>
+			</View>
+			);
+	}
+}
+
+const styles = StyleSheet.create({
+	inputContainer: {
+		paddingHorizontal: 20,
+		paddingVertical: 5,
+		alignItems: 'center',
+		width: Dimensions.get('screen').width,
+	},
+
+
+	boxTitle: {
+		color:'black',
+		fontWeight: 'bold',
+		fontSize: 16,
+		alignSelf: 'flex-start',
+	},
+
+	boxInput: {
+		alignSelf: 'stretch',
+		marginTop: 10,
+		paddingBottom: 10,
+		paddingHorizontal: 20,
+		borderWidth: 1,
+		borderColor: '#999',
+		borderRadius: 3,
+	},
+});
+
+
+
+
+
+
+
